@@ -1,12 +1,16 @@
-'use client';
-
 import Link from 'next/link';
-import { PRODUCTS } from '@/lib/data';
+import { supabase } from '@/lib/supabase';
 import ProductCard from '@/components/ProductCard/ProductCard';
 import styles from './ProductGrid.module.css';
 
-export default function ProductGrid({ title = 'Latest', titleAccent = 'Arrivals', limit = 8, showViewAll = true }) {
-  const displayProducts = PRODUCTS.slice(0, limit);
+export default async function ProductGrid({ title = 'Latest', titleAccent = 'Arrivals', limit = 8, showViewAll = true }) {
+  const { data: displayProducts } = await supabase
+    .from('products')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(limit);
+
+  if (!displayProducts || displayProducts.length === 0) return null;
 
   return (
     <section className={styles.section}>
