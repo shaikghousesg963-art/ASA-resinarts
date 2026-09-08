@@ -1,0 +1,93 @@
+.main {
+  min-height: 100vh;
+  background: var(--bg-cream);
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg) var(--space-4xl);
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 42px);
+  font-weight: 500;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.pageTitle em {
+  font-style: italic;
+  color: var(--maroon);
+}
+
+/* Empty state */
+.emptyState {
+  text-align: center;
+  padding: var(--space-2xl);
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--cream-dark);
+}
+
+.emptyIcon {
+  font-size: 64px;
+  margin-bottom: var(--space-lg);
+  animation: float 3s ease-in-out infinite;
+}
+
+.emptyTitle {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.emptyText {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 400px;
+  margin: 0 auto var(--space-xl);
+}
+
+.emptyActions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+}
+
+/* Tip */
+.tip {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--pink-light);
+  border-radius: var(--radius-md);
+  text-align: left;
+  margin-top: var(--space-lg);
+}
+
+.tipIcon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.tipTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.tipText {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}

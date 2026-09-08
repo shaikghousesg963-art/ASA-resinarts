@@ -1,0 +1,124 @@
+.footer {
+  background: var(--bg-dark);
+  color: rgba(255, 255, 255, 0.75);
+  padding: var(--space-4xl) 0 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: var(--space-2xl);
+  padding-bottom: var(--space-3xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Brand column */
+.logo {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--pink-accent);
+  margin-bottom: var(--space-md);
+}
+
+.brandDesc {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+  max-width: 300px;
+}
+
+.social {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  color: rgba(255, 255, 255, 0.6);
+  transition: all var(--transition-base);
+}
+
+.socialLink:hover {
+  background: var(--maroon);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Columns */
+.colTitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.link {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  padding: 2px 0;
+}
+
+.link:hover {
+  color: var(--pink-accent);
+  padding-left: 6px;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contactItem {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Bottom */
+.bottom {
+  padding: var(--space-lg) 0;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

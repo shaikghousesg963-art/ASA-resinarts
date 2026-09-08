@@ -1,0 +1,137 @@
+.section {
+  padding: var(--space-3xl) 0;
+  background: var(--bg-white);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 500;
+  color: var(--maroon);
+}
+
+.title em {
+  font-style: italic;
+}
+
+.viewAll {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.viewAll:hover {
+  border-color: var(--maroon);
+  color: var(--maroon);
+}
+
+.slider {
+  display: flex;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-md);
+  scrollbar-width: none;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 190px;
+  scroll-snap-align: start;
+  text-decoration: none;
+  text-align: center;
+  transition: transform var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto var(--space-md);
+  border: 3px solid var(--cream-dark);
+  transition: border-color var(--transition-base);
+}
+
+.card:hover .imageWrapper {
+  border-color: var(--maroon);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(107, 32, 64, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover .cardOverlay {
+  opacity: 1;
+}
+
+.count {
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.cardTitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 150px;
+  }
+
+  .imageWrapper {
+    width: 130px;
+    height: 130px;
+  }
+}
