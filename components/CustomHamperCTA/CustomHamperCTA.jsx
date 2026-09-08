@@ -11,7 +11,7 @@ export default function CustomHamperCTA() {
           <span className={styles.badge}>🎉 SPECIAL OFFER</span>
           <h2 className={styles.title}>
             Create Your Own<br />
-            <em>Custom Hamper</em>
+            <em>Custom Resin  Arts</em>
           </h2>
           <p className={styles.description}>
             Tell us the occasion, the budget, and the recipient — we&apos;ll handcraft
