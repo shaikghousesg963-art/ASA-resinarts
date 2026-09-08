@@ -265,6 +265,10 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: var(--space-md) var(--space-md) var(--space-3xl);
+  }
+
   .productLayout {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
@@ -276,5 +280,24 @@
 
   .actions {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .relatedGrid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .quantityRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .priceBlock {
+    flex-direction: column;
+    gap: var(--space-xs);
   }
 }
