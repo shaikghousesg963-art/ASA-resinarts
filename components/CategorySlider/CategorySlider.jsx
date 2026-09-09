@@ -1,10 +1,21 @@
-'use client';
-
 import Link from 'next/link';
 import { CATEGORIES } from '@/lib/data';
+import { supabase } from '@/lib/supabase';
 import styles from './CategorySlider.module.css';
 
-export default function CategorySlider() {
+export default async function CategorySlider() {
+  const { data: products } = await supabase
+    .from('products')
+    .select('category, image');
+
+  const dynamicCategories = CATEGORIES.map(cat => {
+    const catProducts = (products || []).filter(p => p.category === cat.id);
+    const count = catProducts.length;
+    // Use the first uploaded product's image if available, otherwise use a fallback
+    const image = count > 0 ? catProducts[0].image : '/images/placeholder.jpg'; 
+    return { ...cat, count, image };
+  }).filter(cat => cat.count > 0);
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -18,7 +29,7 @@ export default function CategorySlider() {
         </div>
 
         <div className={styles.slider}>
-          {CATEGORIES.map((cat) => (
+          {dynamicCategories.map((cat) => (
             <Link
               key={cat.id}
               href={`/collections?category=${cat.id}`}
