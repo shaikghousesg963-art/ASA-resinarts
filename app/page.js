@@ -1,4 +1,5 @@
 export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 import AnnouncementBar from '@/components/AnnouncementBar/AnnouncementBar';
 import Navbar from '@/components/Navbar/Navbar';
