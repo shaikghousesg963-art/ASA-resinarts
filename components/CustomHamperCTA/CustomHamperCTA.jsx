@@ -14,11 +14,11 @@ export default function CustomHamperCTA() {
             <em>Custom Resin  Arts</em>
           </h2>
           <p className={styles.description}>
-            Tell us the occasion, the budget, and the recipient — we&apos;ll handcraft
-            something truly unforgettable. Perfect for weddings, corporate gifts, and more.
+            Tell us your vision, budget, and the occasion — we'll handcraft
+            stunning resin art tailored just for you. Perfect for weddings, home decor, and personalized gifting.
           </p>
           <a
-            href={getWhatsAppLink('Hi! I would like to create a custom hamper.')}
+            href={getWhatsAppLink('Hi! I would like to create a custom resin art piece.')}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-whatsapp"

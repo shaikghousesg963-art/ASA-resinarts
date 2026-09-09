@@ -142,6 +142,10 @@ export default function ProductClient({ product, relatedProducts }) {
                   💬 ORDER VIA WHATSAPP
                 </a>
               </div>
+              <div style={{marginTop: '1rem', padding: '1rem', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0', fontSize: '0.9rem', color: '#475569', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                <span>💳</span>
+                <span><strong>Payment:</strong> We accept PhonePe UPI at <strong>8639965719@ybl</strong></span>
+              </div>
             </div>
           </div>
 
