@@ -13,18 +13,18 @@ export default function ProductCard({ product }) {
         <div className={styles.imageWrapper}>
           <img src={product.image} alt={product.name} className={styles.image} />
           <div className={styles.badges}>
-            {product.badges.includes('bestseller') && (
+            {product.badges?.includes('bestseller') && (
               <span className="badge badge-bestseller">BESTSELLER</span>
             )}
-            {product.badges.includes('sale') && product.salePercent && (
-              <span className="badge badge-sale">{product.salePercent}% OFF</span>
+            {product.badges?.includes('sale') && product.salepercent && (
+              <span className="badge badge-sale">{product.salepercent}% OFF</span>
             )}
           </div>
         </div>
       </Link>
 
       <div className={styles.info}>
-        <span className={styles.category}>{product.categoryLabel}</span>
+        <span className={styles.category}>{product.categorylabel}</span>
         <Link href={`/product/${product.id}`} className={styles.nameLink}>
           <h3 className={styles.name}>{product.name}</h3>
         </Link>
@@ -32,8 +32,8 @@ export default function ProductCard({ product }) {
         <div className={styles.priceRow}>
           <div className={styles.prices}>
             <span className={styles.price}>{formatPrice(product.price)}</span>
-            {product.originalPrice && (
-              <span className={styles.originalPrice}>{formatPrice(product.originalPrice)}</span>
+            {product.originalprice && (
+              <span className={styles.originalPrice}>{formatPrice(product.originalprice)}</span>
             )}
           </div>
           <a

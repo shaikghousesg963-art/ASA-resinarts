@@ -20,9 +20,9 @@ export default function AdminPage() {
   const [newProduct, setNewProduct] = useState({
     name: '',
     category: 'resin-art',
-    categoryLabel: 'RESIN ART',
+    categorylabel: 'RESIN ART',
     price: '',
-    originalPrice: '',
+    originalprice: '',
     description: ''
   });
   const [imageFile, setImageFile] = useState(null);
@@ -101,9 +101,9 @@ export default function AdminPage() {
         .insert([{
           name: newProduct.name,
           category: newProduct.category,
-          categoryLabel: newProduct.categoryLabel,
+          categorylabel: newProduct.categorylabel,
           price: Number(newProduct.price),
-          originalPrice: newProduct.originalPrice ? Number(newProduct.originalPrice) : null,
+          originalprice: newProduct.originalprice ? Number(newProduct.originalprice) : null,
           image: publicUrl,
           description: newProduct.description
         }]);
@@ -111,7 +111,7 @@ export default function AdminPage() {
       if (insertError) throw insertError;
 
       alert("Product added successfully!");
-      setNewProduct({ name: '', category: 'resin-art', categoryLabel: 'RESIN ART', price: '', originalPrice: '', description: '' });
+      setNewProduct({ name: '', category: 'resin-art', categorylabel: 'RESIN ART', price: '', originalprice: '', description: '' });
       setImageFile(null);
       fetchProducts();
     } catch (err) {
@@ -193,7 +193,7 @@ export default function AdminPage() {
               <div className={styles.formGroup}>
                 <label>Category Label (e.g. RESIN ART)</label>
                 <input type="text" className={styles.input} required 
-                  value={newProduct.categoryLabel} onChange={e => setNewProduct({...newProduct, categoryLabel: e.target.value})} />
+                  value={newProduct.categorylabel} onChange={e => setNewProduct({...newProduct, categorylabel: e.target.value})} />
               </div>
               <div className={styles.formGroup}>
                 <label>Price (₹)</label>
@@ -203,7 +203,7 @@ export default function AdminPage() {
               <div className={styles.formGroup}>
                 <label>Original Price (Optional)</label>
                 <input type="number" className={styles.input} 
-                  value={newProduct.originalPrice} onChange={e => setNewProduct({...newProduct, originalPrice: e.target.value})} />
+                  value={newProduct.originalprice} onChange={e => setNewProduct({...newProduct, originalprice: e.target.value})} />
               </div>
               <div className={styles.formGroup}>
                 <label>Product Image</label>

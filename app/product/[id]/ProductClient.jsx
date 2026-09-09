@@ -61,8 +61,8 @@ export default function ProductClient({ product, relatedProducts }) {
                   {product?.badges?.includes('bestseller') && (
                     <span className="badge badge-bestseller">BESTSELLER</span>
                   )}
-                  {product?.badges?.includes('sale') && product.salePercent && (
-                    <span className="badge badge-sale">{product.salePercent}% OFF</span>
+                  {product?.badges?.includes('sale') && product.salepercent && (
+                    <span className="badge badge-sale">{product.salepercent}% OFF</span>
                   )}
                 </div>
               </div>
@@ -70,16 +70,16 @@ export default function ProductClient({ product, relatedProducts }) {
 
             {/* Info */}
             <div className={styles.infoSection}>
-              <span className={styles.category}>{product.categoryLabel}</span>
+              <span className={styles.category}>{product.categorylabel}</span>
               <h1 className={styles.name}>{product.name}</h1>
 
               <div className={styles.priceBlock}>
                 <span className={styles.price}>{formatPrice(product.price)}</span>
-                {product.originalPrice && (
+                {product.originalprice && (
                   <>
-                    <span className={styles.originalPrice}>{formatPrice(product.originalPrice)}</span>
+                    <span className={styles.originalPrice}>{formatPrice(product.originalprice)}</span>
                     <span className={styles.savings}>
-                      You save {formatPrice(product.originalPrice - product.price)}
+                      You save {formatPrice(product.originalprice - product.price)}
                     </span>
                   </>
                 )}
