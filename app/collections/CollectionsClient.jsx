@@ -101,12 +101,42 @@ export default function CollectionsClient({ allProducts }) {
                 </div>
               </div>
 
-              {/* Grid */}
-              <div className={styles.grid}>
-                {filteredProducts.map(product => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
+              {/* Grid / Sections */}
+              {activeCategory === 'all' ? (
+                <div>
+                  {CATEGORIES.map(category => {
+                    const catProducts = filteredProducts.filter(p => p.category === category.id);
+                    if (catProducts.length === 0) return null;
+                    return (
+                      <div key={category.id} className={styles.categorySection}>
+                        <h2 className={styles.categorySectionTitle}>{category.name}</h2>
+                        <div className={styles.grid}>
+                          {catProducts.map(product => (
+                            <ProductCard key={product.id} product={product} />
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                  {/* Catch-all for products without a matching category */}
+                  {filteredProducts.filter(p => !CATEGORIES.some(c => c.id === p.category)).length > 0 && (
+                     <div className={styles.categorySection}>
+                        <h2 className={styles.categorySectionTitle}>Other Products</h2>
+                        <div className={styles.grid}>
+                          {filteredProducts.filter(p => !CATEGORIES.some(c => c.id === p.category)).map(product => (
+                            <ProductCard key={product.id} product={product} />
+                          ))}
+                        </div>
+                      </div>
+                  )}
+                </div>
+              ) : (
+                <div className={styles.grid}>
+                  {filteredProducts.map(product => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              )}
 
               {filteredProducts.length === 0 && (
                 <div className={styles.emptyState}>
